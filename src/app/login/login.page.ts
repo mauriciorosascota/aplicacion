@@ -58,8 +58,8 @@ export class loginPage {
   }
 
   onLogin() {
-    const userRegistered = false; // Simulación
-    const credentialsCorrect = false; // Simulación
+    const userRegistered = false;
+    const credentialsCorrect = false;
 
     if (!this.loginData.email || !this.loginData.password) {
       this.presentAlert('Por favor, completa todos los campos.');
@@ -70,7 +70,6 @@ export class loginPage {
     } else {
       this.presentAlert('Inicio de sesión exitoso. Bienvenido.');
 
-      // Guardar email si se marcó "Recordar correo"
       if (this.rememberMe) {
         localStorage.setItem('rememberedEmail', this.loginData.email);
       }
@@ -78,7 +77,7 @@ export class loginPage {
   }
 
   ngOnInit() {
-    // Cargar el email guardado si existe
+
     const savedEmail = localStorage.getItem('rememberedEmail');
     if (savedEmail) {
       this.loginData.email = savedEmail;
