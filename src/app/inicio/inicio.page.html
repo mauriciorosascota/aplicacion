@@ -1,0 +1,45 @@
+<ion-header> 
+  <ion-toolbar color="dark">
+    <ion-title>
+      <img src="assets/icon/logo.png" alt="Logo" style="width: 40px; height: 40px;" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="ion-padding">
+  <div style="text-align: center;">
+    <img src="assets/icon/logo.png" alt="Logo" style="width: 150px; height: 150px; margin-bottom: 16px;" />
+  </div>
+
+  <ion-searchbar 
+    placeholder="Buscar películas"
+    [(ngModel)]="searchTerm" 
+    (ionInput)="searchMovie()">
+  </ion-searchbar>
+
+  <h2 class="ion-text-center" style="color: white; margin-top: 16px;">
+    ¡DESCUBRE LAS PELÍCULAS POPULARES EL ÚLTIMO MES!
+  </h2>
+
+  <div class="movies-container">
+    <ion-button class="movie-button" (click)="navigateToMovie('/pelicula-drive')">
+      <img src="assets/portadas/drive.png" alt="Drive" class="movie-image" />
+    </ion-button>
+    <ion-button class="movie-button" (click)="navigateToMovie('/pelicula-inception')">
+      <img src="assets/portadas/inception.jpg" alt="Inception" class="movie-image" />
+    </ion-button>
+    <ion-button class="movie-button" (click)="navigateToMovie('/pelicula-interstellar')">
+      <img src="assets/portadas/Interstellar.jpg" alt="Interstellar" class="movie-image" />
+    </ion-button>
+    <ion-button class="movie-button" (click)="navigateToMovie('/pelicula-La La Land')">
+      <img src="assets/portadas/la la land.jpg" alt="La La Land" class="movie-image" />
+    </ion-button>
+  </div>
+</ion-content>
+
+

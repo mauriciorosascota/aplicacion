@@ -1,0 +1,31 @@
+.register-content {
+    --background: #4a4a4a;
+    color: #ffffff;
+  
+    .form-container {
+      padding: 20px;
+      text-align: center;
+  
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+  
+      .input-item {
+        background: #ffffff;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        --highlight-background: #ffffff;
+      }
+  
+      .register-button {
+        --background: #f4d03f;
+        color: #000000;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #000000;
+        margin-top: 20px;
+      }
+    }
+  }
+  

@@ -1,0 +1,59 @@
+.login-content {
+  --background: #4a4a4a;
+  color: #ffffff;
+
+  .form-container {
+    padding: 20px;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .remember-label {
+      font-size: 14px;
+      color: #ebe3e3;
+    }
+
+    .input-item {
+      background: #ffffff;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      --highlight-background: #ffffff;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .login-button {
+      background: #f4d03f;
+      color: #000000; 
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #000000;
+      margin-bottom: 20px;
+    }
+
+    .register-container {
+      margin-top: 30px;
+      color: #000000;
+
+      p {
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      ion-button {
+        --border-color: #f4d03f; 
+        --color: #000000; 
+        background: #f4d03f; 
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #000000;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<ion-content class="login-content">
+  <div class="form-container">
+    <h1>Iniciar sesión</h1>
+
+    <ion-item class="input-item">
+      <ion-label position="floating">Usuario o Correo</ion-label>
+      <ion-input type="email" placeholder="info@gmail.com" [(ngModel)]="loginData.email"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="••••••••" [(ngModel)]="loginData.password"></ion-input>
+    </ion-item>
+
+    <div class="remember-container">
+      <ion-checkbox [(ngModel)]="rememberMe" class="small-checkbox"></ion-checkbox>
+      <ion-label class="remember-label">Recordar correo</ion-label>
+    </div>
+
+    <ion-label (click)="presentPasswordRecoveryAlert()" class="password-recovery" color="white">
+      <h4>¿Olvidaste tu contraseña?</h4>
+    </ion-label>
+
+    <ion-button expand="block" class="login-button" color="warning" (click)="onLogin()">
+      Iniciar sesión
+    </ion-button>
+
+    <div class="register-container">
+      <p>No tienes una cuenta? <strong>Regístrate!</strong></p>
+      <ion-button expand="block" fill="outline" color="black" [routerLink]="'/register'">Aquí</ion-button>
+    </div>
+  </div>
+</ion-content>
+

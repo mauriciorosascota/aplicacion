@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dark-background">
+  
+
+  <h1 class="movie-title">Interstellar</h1>
+  <p class="movie-meta">2014 &nbsp;&nbsp; B &nbsp;&nbsp; 2 H 49 M</p>
+
+  <div class="rating-container">
+    <ion-icon name="star" (click)="rateMovie(1)" [color]="rating >= 1 ? 'warning' : 'medium'"></ion-icon>
+    <ion-icon name="star" (click)="rateMovie(2)" [color]="rating >= 2 ? 'warning' : 'medium'"></ion-icon>
+    <ion-icon name="star" (click)="rateMovie(3)" [color]="rating >= 3 ? 'warning' : 'medium'"></ion-icon>
+    <ion-icon name="star" (click)="rateMovie(4)" [color]="rating >= 4 ? 'warning' : 'medium'"></ion-icon>
+    <ion-icon name="star" (click)="rateMovie(5)" [color]="rating >= 5 ? 'warning' : 'medium'"></ion-icon>
+    <span class="rating-score">{{ rating }}</span>
+  </div>
+
+  <div class="movie-info-container">
+   
+    <div class="video-container">
+      <iframe
+        width="100%"
+        height="200"
+        [src]="safeVideoUrl"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  
+    <div class="movie-details">
+   
+      <div class="cover-image-container">
+        <img src="assets/portadas/Interstellar.jpg" alt="Portada de la película" />
+      </div>
+
+      <div class="movie-synopsis">
+        <p>
+          Un grupo de exploradores prueban los saltos a través de agujeros de gusano en búsqueda de la sobrevivencia de la humanidad.
+        </p>
+      </div>
+    </div>
+
+    <div class="genres-container">
+      <span class="genre-badge">Sci-Fi</span>
+      <span class="genre-badge">Aventura</span>
+      <span class="genre-badge">Drama</span>
+    </div>
+
+    <div class="streaming-label">Disponible en:</div>
+    <div class="streaming-buttons">
+      <ion-button href="https://www.max.com/" target="_blank" fill="clear">
+        <img src="assets/streaming/Max.png" alt="Max" class="service-icon" />
+      </ion-button>
+      <ion-button href="https://www.primevideo.com/" target="_blank" fill="clear">
+        <img src="assets/streaming/primevideo.png" alt="PrimeVideo" class="service-icon" />
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentarios</h2>
+    <div class="comment" *ngFor="let comment of comments">
+      <img [src]="comment.userIcon" alt="User Icon" class="user-icon" />
+      <div class="comment-content">
+        <p class="username">{{ comment.username }}</p>
+        <p class="user-comment">{{ comment.text }}</p>
+      </div>
+    </div>
+
+    <div class="add-comment">
+      <ion-item>
+        <ion-input placeholder="Escribe un comentario..." [(ngModel)]="newCommentText"></ion-input>
+        <ion-button (click)="addComment()">Enviar</ion-button>
+      </ion-item>
